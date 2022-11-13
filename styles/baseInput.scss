@@ -1,0 +1,21 @@
+@import '../styles.scss';
+
+.baseInput {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-items: flex-start;
+  gap: 0.5rem;
+  label {
+    align-self: flex-start;
+  }
+  &__input {
+    padding: 0.5rem 1rem;
+    background: $color-white;
+    border: 1px solid $color-border;
+    border-radius: 0.5rem;
+    &:focus {
+      outline: none !important;
+      border: 1px solid $color-primary;
+    }
+  }
+}

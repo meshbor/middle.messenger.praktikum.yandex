@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>Login</title>
+  <link rel='stylesheet' href='../../../styles/auth.scss' />
+  <link rel='stylesheet' href='../../../styles/baseInput.scss' />
+  <link rel='stylesheet' href='../../../styles/baseButton.scss' />
+</head>
+
+<body>
+  <div class='auth'>
+         {{>backSlide}}
+
+    <div class='auth__block'>
+      <form class='auth__form'>
+        <span class='auth__title'>Войти</span>
+        <div class="auth__inputs">
+          {{>baseInput placeholder="Старый пароль" id="password-old" name="password-old" type="password"}}
+          {{>baseInput placeholder="Новый пароль" id="password-new" name="password-new" type="password"}}
+          {{>baseInput placeholder="Повторите пароль" id="password-repeat" name="password" type="password"}}
+        </div>
+        <div class='auth__control'>
+          {{>baseButton case="main" type="submit" text="Изменить пароль"}}
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
