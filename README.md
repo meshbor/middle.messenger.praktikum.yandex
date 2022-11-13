@@ -5,6 +5,8 @@
 
 макет - https://www.figma.com/file/jF5fFFzgGOxQeB4CmKWTiE/Chat_external_link?node-id=1%3A658
 
+netlify - https://sparkly-hotteok-0c6e88.netlify.app/
+
 Команды для запуска.
 
 ```npm install``` — Установка необходимых зависимостей.
