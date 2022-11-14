@@ -1,0 +1,32 @@
+{
+  "name": "sprint1",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "parcel serve ./index.hbs --port 3000 --no-cache",
+    "build": "parcel build ./index.hbs",
+    "start": "parcel build ./index.hbs && node ./server.js",
+    "test": "parcel ./index.hbs --port 3000 --no-cache"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meshbor/middle.messenger.praktikum.yandex"
+  },
+  "keywords": [],
+  "author": "Boris Mescheryakov",
+  "license": "ISC",
+  "devDependencies": {
+    "@anikin/parcel-transformer-handlebars": "^1.0.9",
+    "@anikin/parcel-transformer-handlebars-precompile": "^1.0.1",
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0"
+  },
+  "dependencies": {
+    "eslint": "^8.27.0",
+    "express": "4.18.2",
+    "handlebars": "^4.7.7"
+  }
+}
