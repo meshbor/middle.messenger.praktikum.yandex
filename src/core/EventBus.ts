@@ -1,39 +1,33 @@
-type EventCallback = <T>(...args: T[]) => void;
+export default class EventBus<E extends { [Ev: string]: unknown[] }> {
+  private readonly listeners: {
+    [K in keyof E]?: Array<(...args: E[K]) => void>;
+  } = {};
 
-class EventBus {
-  listeners: Record<string, EventCallback[]>;
-  constructor() {
-    this.listeners = {};
-  }
-  emit<T>(event: string, ...args: T[]) {
-    if (!this.listeners[event]) {
-      throw new Error(`Нет события: ${event}`);
-    }
-
-    this.listeners[event].forEach(function (listener) {
-      listener(...args);
-    });
-  }
-
-  on(event: string, callback: () => void): void {
+  on<K extends keyof E>(event: K, callback: (...args: E[K]) => void) {
     if (!this.listeners[event]) {
       this.listeners[event] = [];
     }
 
-    this.listeners[event].push(callback);
+    this.listeners[event]!.push(callback);
   }
 
-  off(event: string, callback: () => void): void {
+  off<K extends keyof E>(event: K, callback: (...args: E[K]) => void) {
     if (!this.listeners[event]) {
-      throw new Error(`Нет события: ${event}`);
+      throw new Error(`Нет события: ${event as string}`);
     }
 
-    this.listeners[event] = this.listeners[event].filter(
-      (listener) => listener !== callback
+    this.listeners[event] = this.listeners[event]!.filter(
+      (listener) => listener !== callback,
     );
   }
 
+  emit<K extends keyof E>(event: K, ...args: E[K]) {
+    if (!this.listeners[event]) {
+      return;
+    }
 
+    this.listeners[event]!.forEach((listener) => {
+      listener(...args);
+    });
+  }
 }
-
-export { EventBus };

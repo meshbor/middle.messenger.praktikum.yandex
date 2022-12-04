@@ -3,10 +3,10 @@
   "version": "1.2.0",
   "description": "",
   "scripts": {
-    "dev": "parcel serve ./index.hbs --port 3000 --no-cache",
-    "build": "parcel build ./index.hbs",
-    "start": "parcel build ./index.hbs && node ./server.js",
-    "test": "parcel ./index.hbs --port 3000 --no-cache"
+    "dev": "parcel serve ./index.html --port 3000 --no-cache",
+    "build": "parcel build ./index.html",
+    "start": "parcel build ./index.html && node ./server.js",
+    "test": "parcel ./index.html --port 3000 --no-cache"
   },
   "engines": {
     "node": ">=12"

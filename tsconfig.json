@@ -1,15 +1,24 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
-    "target": "es2022",
-    "declaration": true,
+    "target": "es2016",
+    "module": "commonjs",
     "esModuleInterop": true,
-    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "sourceMap": true,
-    "baseUrl": "./src",
-    "moduleResolution": "Node"
+    "strictNullChecks": true,
+    "lib": [
+      "ESNext",
+      "DOM",
+      "dom",
+      "dom.iterable"
+    ],
+    "paths": {
+      "/src/*": ["./src/*"],
+    }
   }
 }
