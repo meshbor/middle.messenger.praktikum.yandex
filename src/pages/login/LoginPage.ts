@@ -1,6 +1,6 @@
 import Block from '/src/utils/Block';
 import { Button, InputBlock, Link } from '/src/components';
-import { RegistrationPage } from "/src/pages/registration/RegistrationPage";
+import { RegistrationPage } from "../registration/Registration";
 import { ChatsPage } from "../chats/Chats";
 import { renderDOM } from "/src/utils/renderDOM";
 import { validateForm } from "/src/utils/validateForm";

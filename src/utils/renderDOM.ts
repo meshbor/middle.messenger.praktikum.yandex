@@ -1,6 +1,6 @@
 import Block from "./Block";
 import { LoginPage } from "/src/pages/login/LoginPage";
-import { RegistrationPage } from "/src/pages/registration/RegistrationPage";
+import { RegistrationPage } from "../pages/registration/Registration";
 import { ChatsPage } from "../pages/chats/Chats";
 import { ProfileDetailsPage } from "/src/pages/profile/details/ProfileDetailsPage";
 import { ProfileEditPage } from "/src/pages/profile/edit/ProfileEditPage";
