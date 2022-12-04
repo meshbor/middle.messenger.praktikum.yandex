@@ -1,15 +1,18 @@
 {
-  "name": "sprint1",
+  "name": "middle.messenger.praktikum.yandex",
   "version": "1.0.0",
-  "description": "",
   "scripts": {
-    "dev": "parcel serve ./index.hbs --port 3000 --no-cache",
-    "build": "parcel build ./index.hbs",
-    "start": "parcel build ./index.hbs && node ./server.js",
-    "test": "parcel ./index.hbs --port 3000 --no-cache"
+    "dev": "parcel serve src/index.html --port 3000 --no-cache",
+    "ts": "tsc",
+    "build": "parcel build src/index.html",
+    "start": "parcel build src/index.html && node ./server.js",
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src",
+    "lint:scss": "stylelint \"./src/**/*.scss\""
   },
-  "engines": {
-    "node": ">=12"
+  "staticFiles": {
+    "staticPath": "static/",
+    "staticOutPath": "static/"
   },
   "repository": {
     "type": "git",
@@ -19,14 +22,23 @@
   "author": "Boris Mescheryakov",
   "license": "ISC",
   "devDependencies": {
-    "@anikin/parcel-transformer-handlebars": "^1.0.9",
-    "@anikin/parcel-transformer-handlebars-precompile": "^1.0.1",
-    "@parcel/transformer-sass": "^2.7.0",
-    "parcel": "^2.7.0"
+    "@anikin/parcel-transformer-handlebars": "1.0.9",
+    "@anikin/parcel-transformer-handlebars-precompile": "1.0.1",
+    "@parcel/transformer-less": "2.7.0",
+    "@parcel/transformer-sass": "2.7.0",
+    "@typescript-eslint/eslint-plugin": "5.44.0",
+    "@typescript-eslint/parser": "5.44.0",
+    "eslint": "8.28.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-plugin-import": "2.25.4",
+    "handlebars": "4.7.7",
+    "parcel": "2.7.0",
+    "stylelint": "14.15.0",
+    "stylelint-config-standard": "29.0.0",
+    "typescript": "4.9.3"
   },
   "dependencies": {
-    "eslint": "^8.27.0",
     "express": "4.18.2",
-    "handlebars": "^4.7.7"
+    "nanoid": "4.0.0"
   }
 }
