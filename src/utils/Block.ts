@@ -88,7 +88,7 @@ export default class Block<P extends Record<string, unknown> = any> {
     return { props: props as Props<P>, children };
   }
 
-  protected initChildren(): void {}
+  protected initChildren(): void { }
 
   private _registerEvents(eventBus: EventBus<BlockEvents>): void {
     eventBus.on(Block.EVENTS.INIT, this._init.bind(this));
@@ -103,13 +103,13 @@ export default class Block<P extends Record<string, unknown> = any> {
     this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
   }
 
-  protected init(): void {}
+  protected init(): void { }
 
   private _componentDidMount(): void {
     this.componentDidMount();
   }
 
-  protected componentDidMount(): void {}
+  protected componentDidMount(): void { }
 
   public dispatchComponentDidMount() {
     this.eventBus().emit(Block.EVENTS.FLOW_CDM);
@@ -127,7 +127,7 @@ export default class Block<P extends Record<string, unknown> = any> {
     return oldProps !== newProps;
   }
 
-  public setProps = (nextProps: Partial<Props<P>>) => {
+  public setProps(nextProps: Partial<Props<P>>) {
     if (!nextProps) {
       return;
     }

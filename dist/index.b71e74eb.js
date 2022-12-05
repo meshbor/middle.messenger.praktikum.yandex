@@ -749,10 +749,10 @@ class Block {
     componentDidUpdate(oldProps, newProps) {
         return oldProps !== newProps;
     }
-    setProps = (nextProps)=>{
+    setProps(nextProps) {
         if (!nextProps) return;
         Object.assign(this.props, nextProps);
-    };
+    }
     get element() {
         return this._element;
     }
@@ -2486,8 +2486,6 @@ const inputValidation = (input, errorClass = "inputItem-error")=>{
     let inputError = null;
     const parentElement = input.parentElement;
     if (!validateInput(input)) inputError = true;
-    console.log("input", input);
-    console.log("parentNode", input.parentElement);
     inputError ? parentElement.classList.add(errorClass) : parentElement.classList.remove(errorClass);
 };
 const inputValidationHandler = (e)=>{
@@ -2924,7 +2922,7 @@ const validateForm = (event, selector, errorClass)=>{
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ChatsPage", ()=>ChatsPage);
-var _block = require("/src/utils/Block");
+/* eslint-disable @typescript-eslint/ban-ts-comment */ var _block = require("/src/utils/Block");
 var _blockDefault = parcelHelpers.interopDefault(_block);
 var _messages = require("./components/Messages/Messages");
 var _chatsHeader = require("./components/ChatsHeader/ChatsHeader");

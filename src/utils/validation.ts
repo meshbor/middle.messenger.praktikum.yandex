@@ -71,9 +71,6 @@ export const inputValidation = (input: HTMLInputElement, errorClass = 'inputItem
     inputError = true;
   }
 
-  console.log('input', input);
-  console.log('parentNode', input.parentElement);
-
   inputError
     ? parentElement.classList.add(errorClass)
     : parentElement.classList.remove(errorClass);

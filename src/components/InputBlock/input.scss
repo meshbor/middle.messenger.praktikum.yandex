@@ -48,7 +48,7 @@
 
 .inputItem-error {
   &::after {
-    content: 'Data is not correct';
+    content: 'Invalid format of data';
     color: $error-color;
     position: absolute;
     bottom: -25px;
