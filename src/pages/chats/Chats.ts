@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import Block from "/src/utils/Block";
 import { Messages } from "./components/Messages/Messages";
 import { ChatsHeader } from "./components/ChatsHeader/ChatsHeader";
@@ -46,7 +45,6 @@ export class ChatsPage extends Block {
           newMessages: '1',
           events: {
             click: () => {
-              // @ts-ignore
               this.children.messages.setProps({
                 messageList: [
                   new MessageCard({

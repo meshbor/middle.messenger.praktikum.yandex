@@ -2922,7 +2922,7 @@ const validateForm = (event, selector, errorClass)=>{
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ChatsPage", ()=>ChatsPage);
-/* eslint-disable @typescript-eslint/ban-ts-comment */ var _block = require("/src/utils/Block");
+var _block = require("/src/utils/Block");
 var _blockDefault = parcelHelpers.interopDefault(_block);
 var _messages = require("./components/Messages/Messages");
 var _chatsHeader = require("./components/ChatsHeader/ChatsHeader");
@@ -2970,7 +2970,6 @@ class ChatsPage extends (0, _blockDefault.default) {
                     newMessages: "1",
                     events: {
                         click: ()=>{
-                            // @ts-ignore
                             this.children.messages.setProps({
                                 messageList: [
                                     new (0, _messageCard.MessageCard)({
