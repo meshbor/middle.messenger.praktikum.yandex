@@ -143,13 +143,13 @@
     }
   }
 })({"iJYvl":[function(require,module,exports) {
-"use strict";
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 module.bundle.HMR_BUNDLE_ID = "5c1b77e3b71e74eb";
+"use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
   HMRAsset,
@@ -606,11 +606,11 @@ var _loginScssDefault = parcelHelpers.interopDefault(_loginScss);
 var _profileDetailsPage = require("../profile/details/ProfileDetailsPage");
 class LoginPage extends (0, _blockDefault.default) {
     initChildren() {
-        this.children.loginField = new (0, _components.InputBlock)({
-            type: "text",
-            id: "login-form__login",
-            label: "Login",
-            name: "login"
+        this.children.emailField = new (0, _components.InputBlock)({
+            type: "email",
+            id: "registration-form__email",
+            label: "Email",
+            name: "email"
         });
         this.children.passwordField = new (0, _components.InputBlock)({
             type: "password",
@@ -2438,7 +2438,7 @@ const templateFunction = (0, _handlebarsRuntimeDefault.default).template({
 exports.default = templateFunction;
 
 },{"handlebars/dist/handlebars.runtime":"b7ZpO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3oUsM":[function() {},{}],"ecV3i":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+/* eslint-disable no-restricted-syntax */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "FIELD_NAMES", ()=>FIELD_NAMES);
 parcelHelpers.export(exports, "formValidation", ()=>formValidation);
@@ -2955,7 +2955,7 @@ class ChatsPage extends (0, _blockDefault.default) {
                     message: "Just follow the white rabbit",
                     time: "11:21",
                     type: "got"
-                }), 
+                })
             ],
             userName: "Alice",
             userAvatar: (0, _emptySvgDefault.default)
@@ -2976,7 +2976,7 @@ class ChatsPage extends (0, _blockDefault.default) {
                                         message: "You take the blue pill... the story ends, you wake up in your bed and believe whatever you want to believe. You take the red pill... you stay in Wonderland, and I show you how deep the rabbit hole goes.",
                                         time: "13:00",
                                         type: "got"
-                                    }), 
+                                    })
                                 ],
                                 date: "05 december",
                                 userName: "Morpheus",
@@ -2984,7 +2984,7 @@ class ChatsPage extends (0, _blockDefault.default) {
                             });
                         }
                     }
-                }), 
+                })
             ]
         });
     }
@@ -3349,11 +3349,41 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ChatsHeader", ()=>ChatsHeader);
 var _block = require("/src/utils/Block");
 var _blockDefault = parcelHelpers.interopDefault(_block);
+var _components = require("/src/components");
 var _chatsHeaderHbs = require("./chatsHeader.hbs");
 var _chatsHeaderHbsDefault = parcelHelpers.interopDefault(_chatsHeaderHbs);
 var _chatsHeaderScss = require("./chatsHeader.scss");
 var _chatsHeaderScssDefault = parcelHelpers.interopDefault(_chatsHeaderScss);
+var _renderDOM = require("/src/utils/renderDOM");
+var _profileDetailsPage = require("/src/pages/profile/details/ProfileDetailsPage");
+var _loginPage = require("/src/pages/login/LoginPage");
 class ChatsHeader extends (0, _blockDefault.default) {
+    initChildren() {
+        this.children.profile = new (0, _components.Link)({
+            text: "Profile",
+            url: "/profile",
+            customClass: "chatsHeader__profileLink__link",
+            events: {
+                click: (e)=>{
+                    const profileDetailsPage = new (0, _profileDetailsPage.ProfileDetailsPage)();
+                    e.preventDefault();
+                    (0, _renderDOM.renderDOM)(profileDetailsPage);
+                }
+            }
+        });
+        this.children.login = new (0, _components.Link)({
+            text: "Login",
+            url: "/login",
+            customClass: "chatsHeader__profileLink__link",
+            events: {
+                click: (e)=>{
+                    const profileDetailsPage = new (0, _loginPage.LoginPage)();
+                    e.preventDefault();
+                    (0, _renderDOM.renderDOM)(profileDetailsPage);
+                }
+            }
+        });
+    }
     render() {
         return this.compile((0, _chatsHeaderHbsDefault.default), {
             styles: (0, _chatsHeaderScssDefault.default)
@@ -3361,215 +3391,7 @@ class ChatsHeader extends (0, _blockDefault.default) {
     }
 }
 
-},{"/src/utils/Block":"915bj","./chatsHeader.hbs":"eXAEp","./chatsHeader.scss":"2cURf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eXAEp":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _handlebarsRuntime = require("handlebars/dist/handlebars.runtime");
-var _handlebarsRuntimeDefault = parcelHelpers.interopDefault(_handlebarsRuntime);
-const templateFunction = (0, _handlebarsRuntimeDefault.default).template({
-    "compiler": [
-        8,
-        ">= 4.3.0"
-    ],
-    "main": function(container, depth0, helpers, partials, data) {
-        return '<div class="chatsHeader">\n  <div class="searchInput">\n    <input class="searchInput__input" placeholder="Search">\n  </div>\n</div>\n';
-    },
-    "useData": true
-});
-exports.default = templateFunction;
-
-},{"handlebars/dist/handlebars.runtime":"b7ZpO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2cURf":[function() {},{}],"87QgY":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ChatsList", ()=>ChatsList);
-var _block = require("/src/utils/Block");
-var _blockDefault = parcelHelpers.interopDefault(_block);
-var _chatsListHbs = require("./chatsList.hbs");
-var _chatsListHbsDefault = parcelHelpers.interopDefault(_chatsListHbs);
-class ChatsList extends (0, _blockDefault.default) {
-    constructor(props){
-        super(props);
-    }
-    initChildren() {
-        this.children.chatList = this.props.chatList;
-    }
-    render() {
-        return this.compile((0, _chatsListHbsDefault.default), {});
-    }
-}
-
-},{"/src/utils/Block":"915bj","./chatsList.hbs":"iji9F","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iji9F":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _handlebarsRuntime = require("handlebars/dist/handlebars.runtime");
-var _handlebarsRuntimeDefault = parcelHelpers.interopDefault(_handlebarsRuntime);
-const templateFunction = (0, _handlebarsRuntimeDefault.default).template({
-    "1": function(container, depth0, helpers, partials, data) {
-        var stack1;
-        return "    " + ((stack1 = container.lambda(depth0, depth0)) != null ? stack1 : "") + "\n";
-    },
-    "compiler": [
-        8,
-        ">= 4.3.0"
-    ],
-    "main": function(container, depth0, helpers, partials, data) {
-        var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
-            if (Object.prototype.hasOwnProperty.call(parent, propertyName)) return parent[propertyName];
-            return undefined;
-        };
-        return '<div class="chatsList">\n' + ((stack1 = lookupProperty(helpers, "each").call(depth0 != null ? depth0 : container.nullContext || {}, depth0 != null ? lookupProperty(depth0, "chatList") : depth0, {
-            "name": "each",
-            "hash": {},
-            "fn": container.program(1, data, 0),
-            "inverse": container.noop,
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 2,
-                    "column": 2
-                },
-                "end": {
-                    "line": 4,
-                    "column": 11
-                }
-            }
-        })) != null ? stack1 : "") + "</div>\n";
-    },
-    "useData": true
-});
-exports.default = templateFunction;
-
-},{"handlebars/dist/handlebars.runtime":"b7ZpO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cV3aL":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MessageCard", ()=>MessageCard);
-var _block = require("/src/utils/Block");
-var _blockDefault = parcelHelpers.interopDefault(_block);
-var _messageCardHbs = require("./messageCard.hbs");
-var _messageCardHbsDefault = parcelHelpers.interopDefault(_messageCardHbs);
-var _messageCardScss = require("./messageCard.scss");
-var _messageCardScssDefault = parcelHelpers.interopDefault(_messageCardScss);
-class MessageCard extends (0, _blockDefault.default) {
-    constructor(props){
-        super(props);
-    }
-    render() {
-        return this.compile((0, _messageCardHbsDefault.default), {
-            message: this.props.message,
-            time: this.props.time,
-            type: this.props.type,
-            styles: (0, _messageCardScssDefault.default)
-        });
-    }
-}
-
-},{"/src/utils/Block":"915bj","./messageCard.hbs":"kU5t9","./messageCard.scss":"7lMiQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kU5t9":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _handlebarsRuntime = require("handlebars/dist/handlebars.runtime");
-var _handlebarsRuntimeDefault = parcelHelpers.interopDefault(_handlebarsRuntime);
-const templateFunction = (0, _handlebarsRuntimeDefault.default).template({
-    "compiler": [
-        8,
-        ">= 4.3.0"
-    ],
-    "main": function(container, depth0, helpers, partials, data) {
-        var stack1, helper, alias1 = depth0 != null ? depth0 : container.nullContext || {}, alias2 = container.hooks.helperMissing, alias3 = "function", alias4 = container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
-            if (Object.prototype.hasOwnProperty.call(parent, propertyName)) return parent[propertyName];
-            return undefined;
-        };
-        return '<div class="message__card message__card-' + alias4((helper = (helper = lookupProperty(helpers, "type") || (depth0 != null ? lookupProperty(depth0, "type") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "type",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 1,
-                    "column": 40
-                },
-                "end": {
-                    "line": 1,
-                    "column": 50
-                }
-            }
-        }) : helper)) + '">\n  <div class="message__card__message">\n   ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "message") || (depth0 != null ? lookupProperty(depth0, "message") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "message",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 3,
-                    "column": 3
-                },
-                "end": {
-                    "line": 3,
-                    "column": 19
-                }
-            }
-        }) : helper)) != null ? stack1 : "") + '\n  </div>\n  <div class="message__card__time message__card__time-' + alias4((helper = (helper = lookupProperty(helpers, "type") || (depth0 != null ? lookupProperty(depth0, "type") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "type",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 5,
-                    "column": 54
-                },
-                "end": {
-                    "line": 5,
-                    "column": 64
-                }
-            }
-        }) : helper)) + '">\n    ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "time") || (depth0 != null ? lookupProperty(depth0, "time") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "time",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 6,
-                    "column": 4
-                },
-                "end": {
-                    "line": 6,
-                    "column": 16
-                }
-            }
-        }) : helper)) != null ? stack1 : "") + "\n  </div>\n</div>\n";
-    },
-    "useData": true
-});
-exports.default = templateFunction;
-
-},{"handlebars/dist/handlebars.runtime":"b7ZpO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7lMiQ":[function() {},{}],"9CFzM":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ChatCard", ()=>ChatCard);
-var _block = require("/src/utils/Block");
-var _blockDefault = parcelHelpers.interopDefault(_block);
-var _chatCardHbs = require("./chatCard.hbs");
-var _chatCardHbsDefault = parcelHelpers.interopDefault(_chatCardHbs);
-var _chatCardScss = require("./chatCard.scss");
-var _chatCardScssDefault = parcelHelpers.interopDefault(_chatCardScss);
-class ChatCard extends (0, _blockDefault.default) {
-    constructor(props){
-        super(props);
-    }
-    render() {
-        return this.compile((0, _chatCardHbsDefault.default), {
-            chatIcon: this.props.chatIcon,
-            chatName: this.props.chatName,
-            lastMessage: this.props.lastMessage,
-            lastMessageDate: this.props.lastMessageDate,
-            newMessages: this.props.newMessages,
-            events: {
-                click: this.props.click
-            },
-            styles: (0, _chatCardScssDefault.default)
-        });
-    }
-}
-
-},{"/src/utils/Block":"915bj","./chatCard.hbs":"clVT6","./chatCard.scss":"bzxmR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"clVT6":[function(require,module,exports) {
+},{"/src/utils/Block":"915bj","./chatsHeader.hbs":"eXAEp","./chatsHeader.scss":"2cURf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","/src/components":"dHnah","/src/utils/renderDOM":"KSWc5","/src/pages/profile/details/ProfileDetailsPage":"gLJYG","/src/pages/login/LoginPage":"cdEEQ"}],"eXAEp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _handlebarsRuntime = require("handlebars/dist/handlebars.runtime");
@@ -3584,302 +3406,41 @@ const templateFunction = (0, _handlebarsRuntimeDefault.default).template({
             if (Object.prototype.hasOwnProperty.call(parent, propertyName)) return parent[propertyName];
             return undefined;
         };
-        return '<div class="chatCard" onclick=' + ((stack1 = (helper = (helper = lookupProperty(helpers, "onclick") || (depth0 != null ? lookupProperty(depth0, "onclick") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "onclick",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 1,
-                    "column": 30
-                },
-                "end": {
-                    "line": 1,
-                    "column": 45
-                }
-            }
-        }) : helper)) != null ? stack1 : "") + '>\n  <div class="chatIcon">\n    <img src=' + ((stack1 = (helper = (helper = lookupProperty(helpers, "chatIcon") || (depth0 != null ? lookupProperty(depth0, "chatIcon") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "chatIcon",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 3,
-                    "column": 13
-                },
-                "end": {
-                    "line": 3,
-                    "column": 29
-                }
-            }
-        }) : helper)) != null ? stack1 : "") + ' alt="chatIcon">\n  </div>\n  <div class="chatInfo">\n    <div class="chatInfo__name">\n      ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "chatName") || (depth0 != null ? lookupProperty(depth0, "chatName") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "chatName",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 7,
-                    "column": 6
-                },
-                "end": {
-                    "line": 7,
-                    "column": 22
-                }
-            }
-        }) : helper)) != null ? stack1 : "") + '\n    </div>\n    <div class="chatInfo__lastMessage">\n      ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "lastMessage") || (depth0 != null ? lookupProperty(depth0, "lastMessage") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "lastMessage",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 10,
-                    "column": 6
-                },
-                "end": {
-                    "line": 10,
-                    "column": 25
-                }
-            }
-        }) : helper)) != null ? stack1 : "") + '\n    </div>\n  </div>\n  <div class="chatSubInfo">\n    <div class="chatSubInfo__date">\n      ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "lastMessageDate") || (depth0 != null ? lookupProperty(depth0, "lastMessageDate") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "lastMessageDate",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 15,
-                    "column": 6
-                },
-                "end": {
-                    "line": 15,
-                    "column": 29
-                }
-            }
-        }) : helper)) != null ? stack1 : "") + '\n    </div>\n    <div class="chatSubInfo__newMessages">\n      ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "newMessages") || (depth0 != null ? lookupProperty(depth0, "newMessages") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "newMessages",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 18,
-                    "column": 6
-                },
-                "end": {
-                    "line": 18,
-                    "column": 25
-                }
-            }
-        }) : helper)) != null ? stack1 : "") + "\n    </div>\n  </div>\n</div>\n";
-    },
-    "useData": true
-});
-exports.default = templateFunction;
-
-},{"handlebars/dist/handlebars.runtime":"b7ZpO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bzxmR":[function() {},{}],"l8buw":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _handlebarsRuntime = require("handlebars/dist/handlebars.runtime");
-var _handlebarsRuntimeDefault = parcelHelpers.interopDefault(_handlebarsRuntime);
-const templateFunction = (0, _handlebarsRuntimeDefault.default).template({
-    "compiler": [
-        8,
-        ">= 4.3.0"
-    ],
-    "main": function(container, depth0, helpers, partials, data) {
-        var stack1, helper, alias1 = depth0 != null ? depth0 : container.nullContext || {}, alias2 = container.hooks.helperMissing, alias3 = "function", lookupProperty = container.lookupProperty || function(parent, propertyName) {
-            if (Object.prototype.hasOwnProperty.call(parent, propertyName)) return parent[propertyName];
-            return undefined;
-        };
-        return '<main class="chats">\n  <div class="chats__list">\n    ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "header") || (depth0 != null ? lookupProperty(depth0, "header") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "header",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 3,
-                    "column": 4
-                },
-                "end": {
-                    "line": 3,
-                    "column": 18
-                }
-            }
-        }) : helper)) != null ? stack1 : "") + "\n    " + ((stack1 = (helper = (helper = lookupProperty(helpers, "chatsList") || (depth0 != null ? lookupProperty(depth0, "chatsList") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "chatsList",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 4,
-                    "column": 4
-                },
-                "end": {
-                    "line": 4,
-                    "column": 21
-                }
-            }
-        }) : helper)) != null ? stack1 : "") + '\n  </div>\n  <div class="chats__current">\n    ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "messages") || (depth0 != null ? lookupProperty(depth0, "messages") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "messages",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 7,
-                    "column": 4
-                },
-                "end": {
-                    "line": 7,
-                    "column": 20
-                }
-            }
-        }) : helper)) != null ? stack1 : "") + "\n  </div>\n</main>\n";
-    },
-    "useData": true
-});
-exports.default = templateFunction;
-
-},{"handlebars/dist/handlebars.runtime":"b7ZpO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"63wOg":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("7UhFu") + "empty.b1e0a695.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"iwlg6":[function() {},{}],"gX7DX":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _handlebarsRuntime = require("handlebars/dist/handlebars.runtime");
-var _handlebarsRuntimeDefault = parcelHelpers.interopDefault(_handlebarsRuntime);
-const templateFunction = (0, _handlebarsRuntimeDefault.default).template({
-    "compiler": [
-        8,
-        ">= 4.3.0"
-    ],
-    "main": function(container, depth0, helpers, partials, data) {
-        var stack1, helper, alias1 = depth0 != null ? depth0 : container.nullContext || {}, alias2 = container.hooks.helperMissing, alias3 = "function", lookupProperty = container.lookupProperty || function(parent, propertyName) {
-            if (Object.prototype.hasOwnProperty.call(parent, propertyName)) return parent[propertyName];
-            return undefined;
-        };
-        return '<main>\n  <form class="login-form" id="login-form">\n    <h1 class="login-form__header">Enter</h1>\n    <div class="login-form__content">\n      ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "loginField") || (depth0 != null ? lookupProperty(depth0, "loginField") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "loginField",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 5,
-                    "column": 6
-                },
-                "end": {
-                    "line": 5,
-                    "column": 24
-                }
-            }
-        }) : helper)) != null ? stack1 : "") + "\n      " + ((stack1 = (helper = (helper = lookupProperty(helpers, "passwordField") || (depth0 != null ? lookupProperty(depth0, "passwordField") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "passwordField",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 6,
-                    "column": 6
-                },
-                "end": {
-                    "line": 6,
-                    "column": 27
-                }
-            }
-        }) : helper)) != null ? stack1 : "") + '\n    </div>\n    <div class="login-form__footer">\n      ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "loginButton") || (depth0 != null ? lookupProperty(depth0, "loginButton") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "loginButton",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 9,
-                    "column": 6
-                },
-                "end": {
-                    "line": 9,
-                    "column": 25
-                }
-            }
-        }) : helper)) != null ? stack1 : "") + "\n      " + ((stack1 = (helper = (helper = lookupProperty(helpers, "registerLink") || (depth0 != null ? lookupProperty(depth0, "registerLink") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "registerLink",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 10,
-                    "column": 6
-                },
-                "end": {
-                    "line": 10,
-                    "column": 26
-                }
-            }
-        }) : helper)) != null ? stack1 : "") + "\n      " + ((stack1 = (helper = (helper = lookupProperty(helpers, "chatsLink") || (depth0 != null ? lookupProperty(depth0, "chatsLink") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "chatsLink",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 11,
-                    "column": 6
-                },
-                "end": {
-                    "line": 11,
-                    "column": 23
-                }
-            }
-        }) : helper)) != null ? stack1 : "") + "\n      " + ((stack1 = (helper = (helper = lookupProperty(helpers, "profile") || (depth0 != null ? lookupProperty(depth0, "profile") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+        return "<div class='chatsHeader'>\n  <div class='chatsHeader__profileLink'>\n    " + ((stack1 = (helper = (helper = lookupProperty(helpers, "profile") || (depth0 != null ? lookupProperty(depth0, "profile") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
             "name": "profile",
             "hash": {},
             "data": data,
             "loc": {
                 "start": {
-                    "line": 12,
-                    "column": 6
+                    "line": 3,
+                    "column": 4
                 },
                 "end": {
-                    "line": 12,
-                    "column": 21
+                    "line": 3,
+                    "column": 17
                 }
             }
-        }) : helper)) != null ? stack1 : "") + "\n\n    </div>\n  </form>\n</main>\n\n";
+        }) : helper)) != null ? stack1 : "") + "\n    " + ((stack1 = (helper = (helper = lookupProperty(helpers, "login") || (depth0 != null ? lookupProperty(depth0, "login") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "login",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 4,
+                    "column": 4
+                },
+                "end": {
+                    "line": 4,
+                    "column": 15
+                }
+            }
+        }) : helper)) != null ? stack1 : "") + "\n  </div>\n  <div class='searchInput'>\n    <input class='searchInput__input' placeholder='Поиск' />\n  </div>\n</div>\n";
     },
     "useData": true
 });
 exports.default = templateFunction;
 
-},{"handlebars/dist/handlebars.runtime":"b7ZpO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hFfED":[function() {},{}],"gLJYG":[function(require,module,exports) {
+},{"handlebars/dist/handlebars.runtime":"b7ZpO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2cURf":[function() {},{}],"gLJYG":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ProfileDetailsPage", ()=>ProfileDetailsPage);
@@ -3971,7 +3532,41 @@ class ProfileHeader extends (0, _blockDefault.default) {
 },{"/src/utils/Block":"915bj","/static/user_avatar.svg":"hopQa","./profileHeader.hbs":"cGiYT","./profileHeader.scss":"22T5z","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hopQa":[function(require,module,exports) {
 module.exports = require("./helpers/bundle-url").getBundleURL("7UhFu") + "user_avatar.b4de16a9.svg" + "?" + Date.now();
 
-},{"./helpers/bundle-url":"lgJ39"}],"cGiYT":[function(require,module,exports) {
+},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"cGiYT":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _handlebarsRuntime = require("handlebars/dist/handlebars.runtime");
@@ -4747,7 +4342,474 @@ const templateFunction = (0, _handlebarsRuntimeDefault.default).template({
 });
 exports.default = templateFunction;
 
-},{"handlebars/dist/handlebars.runtime":"b7ZpO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7jUos":[function() {},{}],"le8go":[function(require,module,exports) {
+},{"handlebars/dist/handlebars.runtime":"b7ZpO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7jUos":[function() {},{}],"87QgY":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ChatsList", ()=>ChatsList);
+var _block = require("/src/utils/Block");
+var _blockDefault = parcelHelpers.interopDefault(_block);
+var _chatsListHbs = require("./chatsList.hbs");
+var _chatsListHbsDefault = parcelHelpers.interopDefault(_chatsListHbs);
+class ChatsList extends (0, _blockDefault.default) {
+    constructor(props){
+        super(props);
+    }
+    initChildren() {
+        this.children.chatList = this.props.chatList;
+    }
+    render() {
+        return this.compile((0, _chatsListHbsDefault.default), {});
+    }
+}
+
+},{"/src/utils/Block":"915bj","./chatsList.hbs":"iji9F","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iji9F":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _handlebarsRuntime = require("handlebars/dist/handlebars.runtime");
+var _handlebarsRuntimeDefault = parcelHelpers.interopDefault(_handlebarsRuntime);
+const templateFunction = (0, _handlebarsRuntimeDefault.default).template({
+    "1": function(container, depth0, helpers, partials, data) {
+        var stack1;
+        return "    " + ((stack1 = container.lambda(depth0, depth0)) != null ? stack1 : "") + "\n";
+    },
+    "compiler": [
+        8,
+        ">= 4.3.0"
+    ],
+    "main": function(container, depth0, helpers, partials, data) {
+        var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+            if (Object.prototype.hasOwnProperty.call(parent, propertyName)) return parent[propertyName];
+            return undefined;
+        };
+        return '<div class="chatsList">\n' + ((stack1 = lookupProperty(helpers, "each").call(depth0 != null ? depth0 : container.nullContext || {}, depth0 != null ? lookupProperty(depth0, "chatList") : depth0, {
+            "name": "each",
+            "hash": {},
+            "fn": container.program(1, data, 0),
+            "inverse": container.noop,
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 2,
+                    "column": 2
+                },
+                "end": {
+                    "line": 4,
+                    "column": 11
+                }
+            }
+        })) != null ? stack1 : "") + "</div>\n";
+    },
+    "useData": true
+});
+exports.default = templateFunction;
+
+},{"handlebars/dist/handlebars.runtime":"b7ZpO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cV3aL":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MessageCard", ()=>MessageCard);
+var _block = require("/src/utils/Block");
+var _blockDefault = parcelHelpers.interopDefault(_block);
+var _messageCardHbs = require("./messageCard.hbs");
+var _messageCardHbsDefault = parcelHelpers.interopDefault(_messageCardHbs);
+var _messageCardScss = require("./messageCard.scss");
+var _messageCardScssDefault = parcelHelpers.interopDefault(_messageCardScss);
+class MessageCard extends (0, _blockDefault.default) {
+    constructor(props){
+        super(props);
+    }
+    render() {
+        return this.compile((0, _messageCardHbsDefault.default), {
+            message: this.props.message,
+            time: this.props.time,
+            type: this.props.type,
+            styles: (0, _messageCardScssDefault.default)
+        });
+    }
+}
+
+},{"/src/utils/Block":"915bj","./messageCard.hbs":"kU5t9","./messageCard.scss":"7lMiQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kU5t9":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _handlebarsRuntime = require("handlebars/dist/handlebars.runtime");
+var _handlebarsRuntimeDefault = parcelHelpers.interopDefault(_handlebarsRuntime);
+const templateFunction = (0, _handlebarsRuntimeDefault.default).template({
+    "compiler": [
+        8,
+        ">= 4.3.0"
+    ],
+    "main": function(container, depth0, helpers, partials, data) {
+        var stack1, helper, alias1 = depth0 != null ? depth0 : container.nullContext || {}, alias2 = container.hooks.helperMissing, alias3 = "function", alias4 = container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+            if (Object.prototype.hasOwnProperty.call(parent, propertyName)) return parent[propertyName];
+            return undefined;
+        };
+        return '<div class="message__card message__card-' + alias4((helper = (helper = lookupProperty(helpers, "type") || (depth0 != null ? lookupProperty(depth0, "type") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "type",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 1,
+                    "column": 40
+                },
+                "end": {
+                    "line": 1,
+                    "column": 50
+                }
+            }
+        }) : helper)) + '">\n  <div class="message__card__message">\n   ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "message") || (depth0 != null ? lookupProperty(depth0, "message") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "message",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 3,
+                    "column": 3
+                },
+                "end": {
+                    "line": 3,
+                    "column": 19
+                }
+            }
+        }) : helper)) != null ? stack1 : "") + '\n  </div>\n  <div class="message__card__time message__card__time-' + alias4((helper = (helper = lookupProperty(helpers, "type") || (depth0 != null ? lookupProperty(depth0, "type") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "type",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 5,
+                    "column": 54
+                },
+                "end": {
+                    "line": 5,
+                    "column": 64
+                }
+            }
+        }) : helper)) + '">\n    ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "time") || (depth0 != null ? lookupProperty(depth0, "time") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "time",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 6,
+                    "column": 4
+                },
+                "end": {
+                    "line": 6,
+                    "column": 16
+                }
+            }
+        }) : helper)) != null ? stack1 : "") + "\n  </div>\n</div>\n";
+    },
+    "useData": true
+});
+exports.default = templateFunction;
+
+},{"handlebars/dist/handlebars.runtime":"b7ZpO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7lMiQ":[function() {},{}],"9CFzM":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ChatCard", ()=>ChatCard);
+var _block = require("/src/utils/Block");
+var _blockDefault = parcelHelpers.interopDefault(_block);
+var _chatCardHbs = require("./chatCard.hbs");
+var _chatCardHbsDefault = parcelHelpers.interopDefault(_chatCardHbs);
+var _chatCardScss = require("./chatCard.scss");
+var _chatCardScssDefault = parcelHelpers.interopDefault(_chatCardScss);
+class ChatCard extends (0, _blockDefault.default) {
+    constructor(props){
+        super(props);
+    }
+    render() {
+        return this.compile((0, _chatCardHbsDefault.default), {
+            chatIcon: this.props.chatIcon,
+            chatName: this.props.chatName,
+            lastMessage: this.props.lastMessage,
+            lastMessageDate: this.props.lastMessageDate,
+            newMessages: this.props.newMessages,
+            events: {
+                click: this.props.click
+            },
+            styles: (0, _chatCardScssDefault.default)
+        });
+    }
+}
+
+},{"/src/utils/Block":"915bj","./chatCard.hbs":"clVT6","./chatCard.scss":"bzxmR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"clVT6":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _handlebarsRuntime = require("handlebars/dist/handlebars.runtime");
+var _handlebarsRuntimeDefault = parcelHelpers.interopDefault(_handlebarsRuntime);
+const templateFunction = (0, _handlebarsRuntimeDefault.default).template({
+    "compiler": [
+        8,
+        ">= 4.3.0"
+    ],
+    "main": function(container, depth0, helpers, partials, data) {
+        var stack1, helper, alias1 = depth0 != null ? depth0 : container.nullContext || {}, alias2 = container.hooks.helperMissing, alias3 = "function", lookupProperty = container.lookupProperty || function(parent, propertyName) {
+            if (Object.prototype.hasOwnProperty.call(parent, propertyName)) return parent[propertyName];
+            return undefined;
+        };
+        return '<div class="chatCard" onclick=' + ((stack1 = (helper = (helper = lookupProperty(helpers, "onclick") || (depth0 != null ? lookupProperty(depth0, "onclick") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "onclick",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 1,
+                    "column": 30
+                },
+                "end": {
+                    "line": 1,
+                    "column": 45
+                }
+            }
+        }) : helper)) != null ? stack1 : "") + '>\n  <div class="chatIcon">\n    <img src=' + ((stack1 = (helper = (helper = lookupProperty(helpers, "chatIcon") || (depth0 != null ? lookupProperty(depth0, "chatIcon") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "chatIcon",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 3,
+                    "column": 13
+                },
+                "end": {
+                    "line": 3,
+                    "column": 29
+                }
+            }
+        }) : helper)) != null ? stack1 : "") + ' alt="chatIcon">\n  </div>\n  <div class="chatInfo">\n    <div class="chatInfo__name">\n      ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "chatName") || (depth0 != null ? lookupProperty(depth0, "chatName") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "chatName",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 7,
+                    "column": 6
+                },
+                "end": {
+                    "line": 7,
+                    "column": 22
+                }
+            }
+        }) : helper)) != null ? stack1 : "") + '\n    </div>\n    <div class="chatInfo__lastMessage">\n      ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "lastMessage") || (depth0 != null ? lookupProperty(depth0, "lastMessage") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "lastMessage",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 10,
+                    "column": 6
+                },
+                "end": {
+                    "line": 10,
+                    "column": 25
+                }
+            }
+        }) : helper)) != null ? stack1 : "") + '\n    </div>\n  </div>\n  <div class="chatSubInfo">\n    <div class="chatSubInfo__date">\n      ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "lastMessageDate") || (depth0 != null ? lookupProperty(depth0, "lastMessageDate") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "lastMessageDate",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 15,
+                    "column": 6
+                },
+                "end": {
+                    "line": 15,
+                    "column": 29
+                }
+            }
+        }) : helper)) != null ? stack1 : "") + '\n    </div>\n    <div class="chatSubInfo__newMessages">\n      ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "newMessages") || (depth0 != null ? lookupProperty(depth0, "newMessages") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "newMessages",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 18,
+                    "column": 6
+                },
+                "end": {
+                    "line": 18,
+                    "column": 25
+                }
+            }
+        }) : helper)) != null ? stack1 : "") + "\n    </div>\n  </div>\n</div>\n";
+    },
+    "useData": true
+});
+exports.default = templateFunction;
+
+},{"handlebars/dist/handlebars.runtime":"b7ZpO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bzxmR":[function() {},{}],"l8buw":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _handlebarsRuntime = require("handlebars/dist/handlebars.runtime");
+var _handlebarsRuntimeDefault = parcelHelpers.interopDefault(_handlebarsRuntime);
+const templateFunction = (0, _handlebarsRuntimeDefault.default).template({
+    "compiler": [
+        8,
+        ">= 4.3.0"
+    ],
+    "main": function(container, depth0, helpers, partials, data) {
+        var stack1, helper, alias1 = depth0 != null ? depth0 : container.nullContext || {}, alias2 = container.hooks.helperMissing, alias3 = "function", lookupProperty = container.lookupProperty || function(parent, propertyName) {
+            if (Object.prototype.hasOwnProperty.call(parent, propertyName)) return parent[propertyName];
+            return undefined;
+        };
+        return '<main class="chats">\n  <div class="chats__list">\n    ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "header") || (depth0 != null ? lookupProperty(depth0, "header") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "header",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 3,
+                    "column": 4
+                },
+                "end": {
+                    "line": 3,
+                    "column": 18
+                }
+            }
+        }) : helper)) != null ? stack1 : "") + "\n    " + ((stack1 = (helper = (helper = lookupProperty(helpers, "chatsList") || (depth0 != null ? lookupProperty(depth0, "chatsList") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "chatsList",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 4,
+                    "column": 4
+                },
+                "end": {
+                    "line": 4,
+                    "column": 21
+                }
+            }
+        }) : helper)) != null ? stack1 : "") + '\n  </div>\n  <div class="chats__current">\n    ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "messages") || (depth0 != null ? lookupProperty(depth0, "messages") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "messages",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 7,
+                    "column": 4
+                },
+                "end": {
+                    "line": 7,
+                    "column": 20
+                }
+            }
+        }) : helper)) != null ? stack1 : "") + "\n  </div>\n</main>\n";
+    },
+    "useData": true
+});
+exports.default = templateFunction;
+
+},{"handlebars/dist/handlebars.runtime":"b7ZpO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"63wOg":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("7UhFu") + "empty.b1e0a695.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"iwlg6":[function() {},{}],"gX7DX":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _handlebarsRuntime = require("handlebars/dist/handlebars.runtime");
+var _handlebarsRuntimeDefault = parcelHelpers.interopDefault(_handlebarsRuntime);
+const templateFunction = (0, _handlebarsRuntimeDefault.default).template({
+    "compiler": [
+        8,
+        ">= 4.3.0"
+    ],
+    "main": function(container, depth0, helpers, partials, data) {
+        var stack1, helper, alias1 = depth0 != null ? depth0 : container.nullContext || {}, alias2 = container.hooks.helperMissing, alias3 = "function", lookupProperty = container.lookupProperty || function(parent, propertyName) {
+            if (Object.prototype.hasOwnProperty.call(parent, propertyName)) return parent[propertyName];
+            return undefined;
+        };
+        return '<main>\n  <form class="login-form" id="login-form">\n    <h1 class="login-form__header">Enter</h1>\n    <div class="login-form__content">\n      ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "emailField") || (depth0 != null ? lookupProperty(depth0, "emailField") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "emailField",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 5,
+                    "column": 6
+                },
+                "end": {
+                    "line": 5,
+                    "column": 24
+                }
+            }
+        }) : helper)) != null ? stack1 : "") + "\n      " + ((stack1 = (helper = (helper = lookupProperty(helpers, "passwordField") || (depth0 != null ? lookupProperty(depth0, "passwordField") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "passwordField",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 6,
+                    "column": 6
+                },
+                "end": {
+                    "line": 6,
+                    "column": 27
+                }
+            }
+        }) : helper)) != null ? stack1 : "") + '\n    </div>\n    <div class="login-form__footer">\n      ' + ((stack1 = (helper = (helper = lookupProperty(helpers, "loginButton") || (depth0 != null ? lookupProperty(depth0, "loginButton") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "loginButton",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 9,
+                    "column": 6
+                },
+                "end": {
+                    "line": 9,
+                    "column": 25
+                }
+            }
+        }) : helper)) != null ? stack1 : "") + "\n      " + ((stack1 = (helper = (helper = lookupProperty(helpers, "registerLink") || (depth0 != null ? lookupProperty(depth0, "registerLink") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "registerLink",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 10,
+                    "column": 6
+                },
+                "end": {
+                    "line": 10,
+                    "column": 26
+                }
+            }
+        }) : helper)) != null ? stack1 : "") + "\n      " + ((stack1 = (helper = (helper = lookupProperty(helpers, "chatsLink") || (depth0 != null ? lookupProperty(depth0, "chatsLink") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "chatsLink",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 11,
+                    "column": 6
+                },
+                "end": {
+                    "line": 11,
+                    "column": 23
+                }
+            }
+        }) : helper)) != null ? stack1 : "") + "\n      " + ((stack1 = (helper = (helper = lookupProperty(helpers, "profile") || (depth0 != null ? lookupProperty(depth0, "profile") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "profile",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 12,
+                    "column": 6
+                },
+                "end": {
+                    "line": 12,
+                    "column": 21
+                }
+            }
+        }) : helper)) != null ? stack1 : "") + "\n\n    </div>\n  </form>\n</main>\n\n";
+    },
+    "useData": true
+});
+exports.default = templateFunction;
+
+},{"handlebars/dist/handlebars.runtime":"b7ZpO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hFfED":[function() {},{}],"le8go":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "NotFoundPage", ()=>NotFoundPage);

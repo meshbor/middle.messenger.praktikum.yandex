@@ -10,11 +10,11 @@ import { ProfileDetailsPage } from '../profile/details/ProfileDetailsPage';
 
 export class LoginPage extends Block {
   protected initChildren() {
-    this.children.loginField = new InputBlock({
-      type: 'text',
-      id: 'login-form__login',
-      label: 'Login',
-      name: 'login',
+    this.children.emailField = new InputBlock({
+      type: 'email',
+      id: 'registration-form__email',
+      label: 'Email',
+      name: 'email',
     });
 
     this.children.passwordField = new InputBlock({
