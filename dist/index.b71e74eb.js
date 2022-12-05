@@ -3391,7 +3391,7 @@ class ChatsHeader extends (0, _blockDefault.default) {
     }
 }
 
-},{"/src/utils/Block":"915bj","./chatsHeader.hbs":"eXAEp","./chatsHeader.scss":"2cURf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","/src/components":"dHnah","/src/utils/renderDOM":"KSWc5","/src/pages/profile/details/ProfileDetailsPage":"gLJYG","/src/pages/login/LoginPage":"cdEEQ"}],"eXAEp":[function(require,module,exports) {
+},{"/src/utils/Block":"915bj","/src/components":"dHnah","./chatsHeader.hbs":"eXAEp","./chatsHeader.scss":"2cURf","/src/utils/renderDOM":"KSWc5","/src/pages/profile/details/ProfileDetailsPage":"gLJYG","/src/pages/login/LoginPage":"cdEEQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eXAEp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _handlebarsRuntime = require("handlebars/dist/handlebars.runtime");
