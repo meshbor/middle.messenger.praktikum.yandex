@@ -11,14 +11,9 @@
     "noUnusedParameters": true,
     "sourceMap": true,
     "strictNullChecks": true,
-    "lib": [
-      "ESNext",
-      "DOM",
-      "dom",
-      "dom.iterable"
-    ],
+    "lib": ["ESNext", "DOM", "dom", "dom.iterable"],
     "paths": {
-      "/src/*": ["./src/*"],
+      "/src/*": ["./src/*"]
     }
   }
 }
